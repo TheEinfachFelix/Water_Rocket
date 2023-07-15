@@ -1,7 +1,9 @@
 # Hardware
 
 ## Servo
+
 - MC-410 
+- 
 ### Data
 - travel distance 90 deg (0-180 in code)
 - Power consumtion: @ 6V -> max@stall: 1A; max@move ca. 0.7A; min: 0.6A 
