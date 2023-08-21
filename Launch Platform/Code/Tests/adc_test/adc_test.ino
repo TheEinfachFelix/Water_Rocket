@@ -3,7 +3,7 @@
 Adafruit_ADS1115 ads;
 
 void setup() {
-Serial.begin(9600); //gain
+Serial.begin(115200); //gain
 ads.setGain(GAIN_TWOTHIRDS);
 ads.begin();
 }
