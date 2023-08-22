@@ -21,6 +21,6 @@ void setup() {
 
 void loop() {
   lcd.setCursor(0, 0);
-  lcd.print((2*ads.readADC_SingleEnded(0))*0.936329588);
+  lcd.print(float(2*ads.readADC_SingleEnded(0))/10000);
   delay(100);
 }
