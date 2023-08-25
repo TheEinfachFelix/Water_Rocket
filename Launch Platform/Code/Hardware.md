@@ -15,4 +15,7 @@
 ### Data 
 - Pinout: green: Data; Red 5v; Black GND
 - Green give a Voltage corelating to the presure * 0.936329588 (at 5V it maxes out -> presure > 5 Bar)
+
+## LCD
+-  https://github.com/johnrickman/LiquidCrystal_I2C this lib and only this lib
 - 
