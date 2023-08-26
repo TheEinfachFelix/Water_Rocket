@@ -10,7 +10,7 @@ ads.begin();
 
 void loop() {
 Serial.print("A0: ");
-Serial.print((2*ads.readADC_SingleEnded(0))*0.936329588);
+Serial.print((ads.readADC_SingleEnded(0)));
 Serial.print("  A1: ");
 Serial.print(2*ads.readADC_SingleEnded(1));
 Serial.print("  A2: ");

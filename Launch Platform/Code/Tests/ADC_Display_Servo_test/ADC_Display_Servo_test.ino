@@ -25,7 +25,7 @@ void setup() {
 
 void loop() {
   lcd.setCursor(0, 0);
-  lcd.print(float(2*ads.readADC_SingleEnded(0))/10000);
+  (float(2*ads.readADC_SingleEnded(0))/10000);
   
   myservo.write(0);
   delay(1000);
