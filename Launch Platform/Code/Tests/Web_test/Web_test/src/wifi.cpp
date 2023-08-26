@@ -25,14 +25,20 @@ void wifiSetup(){
   Serial.println("IP address: ");
   Serial.print("                ");
   Serial.println(WiFi.localIP());
-  server.begin();
+  
 
-  if(MDNS.begin("ESP8266")){
-    Serial.println("DNS gestartet!");
+  if (!MDNS.begin("esp8266")) {
+    Serial.println("Error setting up MDNS responder!");
+    while (1) {
+      delay(1000);
+    }
   }
+  server.begin();
+  MDNS.addService("http", "tcp", 80);
 }
 
 void wifiLoop(){
+  MDNS.update();
      // Prüfen, ob sich ein Client verbunden hat
   WiFiClient client = server.available();
   if (!client) {
