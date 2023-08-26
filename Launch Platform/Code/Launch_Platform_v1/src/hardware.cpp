@@ -17,7 +17,7 @@ void hardwareSetup(){
         lcd.init();
         lcd.backlight();
     // Servo
-       myservo.attach(2); 
+       myservo.attach(0); 
 
     // für Karusell
     setLCD(0, String(dns_adresse) + ".local");

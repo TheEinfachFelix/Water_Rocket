@@ -7,7 +7,8 @@ WiFiServer server(80);
 
 // Variable für den HTTP Request
 String header;
-int TempWert = 0;
+
+bool connection_debug = 0;
 
 
 void wifiSetup(){
@@ -46,14 +47,14 @@ void wifiLoop(){
     return;
   }
   // Warten auf Daten vom Client
-  Serial.println("new client");
+  if(connection_debug) Serial.println("new client");
   while(!client.available()){
     delay(1);
   }
 
   // Erste Zeile des Requests lesen
   String request = client.readStringUntil('\r');
-  Serial.println(request);
+  if(connection_debug) Serial.println(request);
   client.flush();
 
 
@@ -140,8 +141,8 @@ void wifiLoop(){
   client.println("<script>setInterval(function(){getDHT11Vals();}, 250);  function getDHT11Vals(){var DHT11Request = new XMLHttpRequest();DHT11Request.onreadystatechange = function() { if(this.readyState == 4 && this.status == 200 && this.responseText != null){document.getElementById(\"DHT11Vals\").innerHTML = this.responseText;}};DHT11Request.open(\"GET\", \"readDHT11\", true);DHT11Request.send();}</script>");
 
   delay(1);
-  Serial.println("Client trennen");
-  Serial.println("");
+  if(connection_debug) Serial.println("Client trennen");
+  if(connection_debug) Serial.println("");
   }
 }
 
