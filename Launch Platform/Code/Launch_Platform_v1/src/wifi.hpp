@@ -7,6 +7,10 @@
 
 #include "hardware.hpp"
 
+
 void wifiSetup();
 void wifiLoop();
 String getIP();
+bool getArm();
+bool getAutoLaunch();
+bool getForceLaunch();

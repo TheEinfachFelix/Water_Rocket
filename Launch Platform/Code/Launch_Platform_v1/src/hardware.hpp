@@ -18,3 +18,4 @@ void hardwareSetup();
 void setServo(int n);
 float getADC(int n);
 void setLCD(int line, String text, int cursor = 0);
+void setTweeter(bool b);

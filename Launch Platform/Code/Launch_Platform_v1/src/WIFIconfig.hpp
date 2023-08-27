@@ -9,5 +9,3 @@ const char* password = "51823423816189225268";
 
 const char* dns_adresse = "rampe";
 
-const int servo_hold = 0;
-const int servo_go = 180;

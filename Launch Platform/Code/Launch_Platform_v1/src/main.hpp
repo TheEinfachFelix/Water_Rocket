@@ -23,3 +23,4 @@
 #include "hardware.hpp"
 
 extern const char* dns_adresse;
+extern String countdown;
