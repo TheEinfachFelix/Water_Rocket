@@ -71,8 +71,11 @@ void wifiLoop(){
   if(request.indexOf("readDHT11") != -1)
   {
     if(Autolaunch){
-      client.print("<p style=\"font-size: 350%\">Countdown: ");
+      client.print("<p style=\"font-size: 300%\">Countdown: ");
       client.print(countdown);
+      client.println("</p>");
+      client.print("<p>Der Druck ist: ");
+      client.print(getADC(0));
       client.println("</p>");
     }else{
       client.print("<p>Der Druck ist: ");

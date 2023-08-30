@@ -8,8 +8,8 @@ bool karussell = 0;
 unsigned long previousMillisCountdown = 0; 
 const long intervalCountdown = 1000; 
 
-const int servo_hold = 0;
-const int servo_go = 180;
+const int servo_hold = 180;
+const int servo_go = 0;
 
 void setup() {
     Serial.begin(115200);
@@ -44,7 +44,7 @@ void loop() {
         setLCD(1, "Arm", 13);
         // auto Launch
         if (getAutoLaunch()){
-            if (getADC(0) != 5.0){
+            if (getADC(0) >= 4.9){
                 if (currentMillis - previousMillisCountdown >= intervalCountdown) { 
                     previousMillisCountdown = currentMillis;
                     if (countdown  == "N/A"){
