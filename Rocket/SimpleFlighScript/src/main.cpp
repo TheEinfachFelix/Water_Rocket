@@ -13,19 +13,18 @@ void setup() {
     Landing_Gear.attach(16); // 16 is Servo Pin
 
     setupGyro();
-    bmp_setup();
+    //bmp_setup();
     
-    altimeter_ofset = get_bpm_SealevelPressure();
+   // altimeter_ofset = get_bpm_SealevelPressure();
 
     Landing_Gear.write(180);
 }
 
 void loop() {
-    mpu.getEvent(&a, &g, &temp);
+    //mpu.getEvent(&a, &g, &temp);
     out = getGyro();
     AngleOut = getAngle();
-
-    if(digitalRead(13) == 1){
+      if(digitalRead(13) == 1){
         // delay setup
         if(Door_Time == 0){
             Door_Time = int(millis());
@@ -42,6 +41,5 @@ void loop() {
         Landing_Gear.write(180);
     }
     delay(15);
-
     Serial.println(millis() > (Door_Time + Door_Delay));
 }
