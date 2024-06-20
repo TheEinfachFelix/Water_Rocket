@@ -1,9 +1,9 @@
 #include "main.hpp"
 
-float Gravitation = 9.80665;
-Vector out;
-double * AngleOut;
-int32_t altimeter_ofset;
+//float Gravitation = 9.80665;
+//Vector out;
+//double * AngleOut;
+//int32_t altimeter_ofset;
 uint32_t Door_Time = 0;
 uint32_t Door_Delay = 1000;
 
@@ -12,7 +12,7 @@ void setup() {
     pinMode(13, INPUT_PULLUP);
     Landing_Gear.attach(16); // 16 is Servo Pin
 
-    setupGyro();
+    //setupGyro();
     //bmp_setup();
     
    // altimeter_ofset = get_bpm_SealevelPressure();
@@ -22,8 +22,8 @@ void setup() {
 
 void loop() {
     //mpu.getEvent(&a, &g, &temp);
-    out = getGyro();
-    AngleOut = getAngle();
+    //out = getGyro();
+    //AngleOut = getAngle();
       if(digitalRead(13) == 1){
         // delay setup
         if(Door_Time == 0){
